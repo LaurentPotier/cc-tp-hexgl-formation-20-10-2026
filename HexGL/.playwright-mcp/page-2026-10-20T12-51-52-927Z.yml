@@ -1,0 +1,10 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - img "ACME" [ref=e5]
+    - heading "Bienvenue au ACME Racing Challenge" [level=1] [ref=e6]
+  - generic [ref=e8]:
+    - generic [ref=e9] [cursor=pointer]: Démarrer la course
+    - generic [ref=e10] [cursor=pointer]: "Controls: KEYBOARD"
+    - generic [ref=e11] [cursor=pointer]: "Quality: VERY HIGH"
+    - generic [ref=e12] [cursor=pointer]: "HUD: ON"
+    - generic [ref=e13] [cursor=pointer]: Credits
