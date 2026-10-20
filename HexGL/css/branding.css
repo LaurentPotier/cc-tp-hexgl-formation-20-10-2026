@@ -1,0 +1,111 @@
+/*
+  Habillage ACME de l'écran d'accueil (#step-1). Chargé après multi.css, qu'il surcharge.
+  Les couleurs viennent de branding.js (variables --brand-*) : aucune valeur de couleur ici.
+*/
+
+#global {
+  background: var(--brand-background);
+  -webkit-animation: none;
+  animation: none;
+}
+
+/* Logo + message + menu forment un seul bloc centré verticalement. */
+#brand-center {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#title {
+  position: relative;
+  top: auto;
+  bottom: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: none;
+  -webkit-animation: none;
+  animation: none;
+}
+
+#menucontainer {
+  position: relative;
+  bottom: auto;
+  width: 100%;
+  margin-top: 1em;
+}
+
+#brand-logo-card {
+  width: 90%;
+  max-width: 480px;
+  box-sizing: border-box;
+  padding: 16px 24px;
+  border-radius: 24px;
+  background: var(--brand-white);
+}
+
+#brand-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Logo indisponible : le texte alternatif « ACME » reste lisible. */
+  font-size: 2em;
+  text-align: center;
+}
+
+#brand-welcome {
+  margin: 0.6em 20px 0;
+  font-size: 2.6em;
+  font-weight: normal;
+  color: var(--brand-white);
+}
+
+#menu {
+  color: var(--brand-white);
+}
+
+#menu div {
+  background: none;
+  text-shadow: none;
+}
+
+#menu div:hover {
+  color: var(--brand-cyan);
+}
+
+#menu #start {
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: 90%;
+  margin: 0 auto 0.3em;
+  padding: 0.15em 1.2em 0.05em;
+  border-radius: 999px;
+  color: var(--brand-white);
+  background: linear-gradient(90deg, var(--brand-violet), var(--brand-blue));
+}
+
+#menu #start:hover {
+  color: var(--brand-white) !important;
+}
+
+/* Petit écran (portrait étroit) */
+@media (max-width: 480px) {
+  #brand-welcome { font-size: 1.8em; }
+}
+
+/* Écran bas (mobile paysage) : logo et menu réduits pour ne pas se chevaucher */
+@media (max-height: 500px) {
+  #brand-logo-card { max-width: 180px; padding: 6px 12px; border-radius: 12px; }
+  #brand-welcome { font-size: 1.3em; margin-top: 0.3em; }
+  #menucontainer { margin-top: 0.4em; }
+  #menu { font-size: 1.1em; }
+}
